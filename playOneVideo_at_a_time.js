@@ -9,6 +9,7 @@ $("video").each(function() {
             this.pause();
         });
     };
+	this.addEventListener("play", this.pauseOthers.bind(this), false);
 	
 $("audio").each(function() {
     this.pauseOthers = function(event) {
