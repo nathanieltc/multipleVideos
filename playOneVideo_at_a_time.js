@@ -1,24 +1,16 @@
 // JavaScript Document
 
 $(function() {
-$("video").each(function() {
+$("audio, video").each(function() {
     this.pauseOthers = function(event) {
-        $('video').addClass('stopvideo');
-        $(this).removeClass('stopvideo');
-        $('.stopvideo').each(function() {
-            this.pause();
-        });
-    };
-	this.addEventListener("play", this.pauseOthers.bind(this), false);
-	
-$("audio").each(function() {
-    this.pauseOthers = function(event) {
-        $('audio').addClass('stopaudio');
-        $(this).removeClass('stopaudio');
-        $('.stopaudio').each(function() {
+        $('audio, video').addClass('stopaudio, stopvideo');
+        $(this).removeClass('stopaudio, stopvideo');
+        $('.stopaudio, .stopvideo').each(function() {
             this.pause();
         });
     };
     this.addEventListener("play", this.pauseOthers.bind(this), false);
+	
+
 });
 });
