@@ -9,6 +9,15 @@ $("video").each(function() {
             this.pause();
         });
     };
+	
+$("audio").each(function() {
+    this.pauseOthers = function(event) {
+        $('audio').addClass('stopaudio');
+        $(this).removeClass('stopaudio');
+        $('.stopaudio').each(function() {
+            this.pause();
+        });
+    };
     this.addEventListener("play", this.pauseOthers.bind(this), false);
 });
 });
